@@ -70,9 +70,9 @@ body {
   --logo-width: 150px;
   --search-width: 60px;
   --header-heigth: 80px;
-  width: 1280px;
-  height: 800px;
-  border-radius: 35px;
+  width: 960px;
+  height: 90vh;
+  border-radius: 28px;
   background: var(--color-background);
   overflow: hidden;
 }
@@ -177,7 +177,7 @@ body {
 .app__cta {
   padding: 0;
   margin: 0;
-  letter-spacing: 1.7px;
+  text-align: center;
   padding: 0;
   margin: 0;
   border: none;
@@ -218,12 +218,8 @@ body {
 
 .app__cover {
   position: relative;
-  top: -50px;
-  padding: 0;
   margin: 0;
   padding: 15px;
-  width: 100%;
-  height: 155%;
 }
 .app__cover_img {
   position: absolute;
@@ -263,16 +259,6 @@ body {
   left: -115px;
   transform: translateX(10px) skewX(351deg);
 }
-.app__cover figcaption {
-  position: absolute;
-  left: 325px;
-  bottom: 105px;
-  font-size: 21px;
-  z-index: 3;
-  padding: 0;
-  margin: 0;
-  color: var(--color-gray);
-}
 
 .app__cta {
   transition: 0.2s 0s ease-out;
@@ -308,10 +294,6 @@ body {
 
 /* PC & Tablets ---------------------- */
 @media screen and (min-width: 265px) {
-  .app {
-    width: 960px;
-    height: 540px;
-  }
   .app__header {
     padding: 21px;
   }
@@ -320,7 +302,7 @@ body {
   }
   .app__hero {
     grid-template-rows: 35px 190px 85px 100px;
-    grid-template-columns: 40px 1fr 50px 2fr;
+    grid-template-columns: 40px 1.2fr 14% 2fr;
     padding: 5px 35px;
   }
   .app__title {
@@ -343,13 +325,7 @@ body {
   .app__cover {
     width: 100%;
     height: calc(100% + 30px);
-    top: -15px;
     grid-row: 1/span 4;
-  }
-  .app__cover figcaption {
-    left: 185px;
-    bottom: 25px;
-    font-size: 16px;
   }
   .app__cover_img {
     width: 345px;
@@ -366,6 +342,46 @@ body {
   .app__cover_shape::before {
     width: 85%;
     transform: translateX(10px) skewX(355deg);
+  }
+}
+
+/* Phones --------------- */
+@media screen and (max-width: 800px) {
+  .app {
+    width: 95%;
+    height: 95vh;
+    overflow: scroll;
+    border-radius: 18px;
+  }
+  .app__logo {
+    justify-content: flex-start;
+  }
+  .app__nav {
+    width: 100%;
+    padding: 15px 0;
+  }
+  .app__nav_list {
+    padding: 0;
+  }
+  .app__nav_link {
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+  .app__hero {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    padding: 0;
+  }
+  .app__heading {
+    height: auto;
+  }
+  .app__cover {
+    height: 340px;
+  }
+  .app__cover_img {
+    width: 245px;
+    height: 250px;
   }
 }
 
@@ -425,7 +441,7 @@ body {
   -webkit-animation: push-up ease both;
           animation: push-up ease both;
 }
-.app__title, .app__cover_img, .app__cover figcaption {
+.app__title, .app__cover_img {
   -webkit-animation: push-down ease both;
           animation: push-down ease both;
 }
@@ -442,12 +458,6 @@ body {
 .app__cover_img {
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
-}
-.app__cover figcaption {
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
